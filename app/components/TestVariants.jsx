@@ -2,22 +2,35 @@ import React from 'react';
 
 
 export var TestVariants =  (props) => {
+
     const variantItem  = props.variants.map((variant, i) => {
-        console.log(variant)
+        console.log(variant);
         return (
-            <li key={i}>
-                <label>
+            <li  key={i}>
+                <label >
                     <input
                         type="radio"
-                        name="radio-test"/> {variant}
+                        name="radio-test"
+
+                        /> {variant}
                 </label>
             </li>
             )
 
     });
+    const pickVariant = () => {
+
+        props.pickVariant();
+
+    }
+    const radioCheck = (e) => {
+        console.log('Radio check ' + e.target.value);
+
+    }
     return (
         <div>
-            <ul >{variantItem}</ul>
+            <ul  onChange={radioCheck}>{variantItem}</ul>
+            <button onClick={pickVariant}  className="button button-medium">Ok</button>
         </div>
 
          )
@@ -26,3 +39,4 @@ export var TestVariants =  (props) => {
 
 
 export default TestVariants;
+

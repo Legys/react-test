@@ -12,15 +12,14 @@ class TestFrame extends React.Component {
         this.handleNext = this.handleNext.bind(this);
         /*this.handleRightAnswer = this.handleRightAnswer.bind(this);*/
     }
-    handleNext(e) {
-        e.preventDefault();
+    handleNext() {
+
         console.log('next');
         console.log(this.state.step);
 
             this.setState({
                 step: this.state.step + 1
             });
-
     }
     shouldComponentUpdate(nextProps, nextState) {
         if (nextState.step === this.props.tests.length) {
@@ -36,8 +35,9 @@ class TestFrame extends React.Component {
             const que = this.props.tests[this.state.step].question;
             const variants = this.props.tests[this.state.step].variants;
        const renderTotal = () => {
+           let total = 0;
                return (
-                   <div>You got </div>
+                   <div>You got {total}\{this.props.tests.length} </div>
                )
        }
 
@@ -48,8 +48,8 @@ class TestFrame extends React.Component {
                         (
                             <div>
                                 <TestQuestion question={que}/>
-                                <TestVariants  variants={variants}/>
-                                <button onClick={this.handleNext} className="button button-medium">Ok</button>
+                                <TestVariants pickVariant={this.handleNext} variants={variants}/>
+
                             </div>
                         ) :
                         (
