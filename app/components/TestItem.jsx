@@ -1,12 +1,16 @@
 import React  from 'react';
 
-export var TestItem = React.createClass({
-    render() {
-        var { variant } = this.props;
-        return (
-            <div>
-                <label> <input type="radio" name="radio-test"/> {variant} </label>
-            </div>
-        )
-    }
-});
+export var TestItem = (props) => {
+
+    var {variant} = props;
+    return (
+        <div>
+            <label>
+                <input
+                    type="radio"
+                    name="radio-test"/> {variant}
+            </label>
+        </div>
+    )
+}
+export default TestItem;

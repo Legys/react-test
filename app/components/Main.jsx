@@ -1,5 +1,6 @@
-var React = require('react');
-import {TestFrame} from 'TestFrame';
+import React from 'react';
+import TestFrame  from 'TestFrame';
+
 
 var Main = (props) => {
     return (
@@ -15,4 +16,4 @@ var Main = (props) => {
         )
 }
 
-module.exports = Main;
+export default Main;

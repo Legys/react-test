@@ -1,13 +1,10 @@
 import React  from 'react';
 
-export var TestQuestion = React.createClass({
-
-    render() {
-        var { tests} = this.props;
+export var TestQuestion = (props)  => {
+        var { question} = props;
         return (
             <div>
-                {tests.question}
+                <ul>{question}</ul>
             </div>
-        )
-    }
-});
+            )
+};

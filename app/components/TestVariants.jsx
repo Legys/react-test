@@ -1,18 +1,28 @@
 import React from 'react';
-import {TestItem} from 'TestItem';
+
 
 export var TestVariants =  (props) => {
-    var {variants} = props;
+    const variantItem  = props.variants.map((variant, i) => {
+        console.log(variant)
+        return (
+            <li key={i}>
+                <label>
+                    <input
+                        type="radio"
+                        name="radio-test"/> {variant}
+                </label>
+            </li>
+            )
 
-    var renderItem = variants.map((variant, i) => {
-        return
-            <TestItem
-                key={i}
-                variant={variant[1]}/>
     });
     return (
         <div>
-            {renderItem}
+            <ul >{variantItem}</ul>
         </div>
-    )
+
+         )
 }
+
+
+
+export default TestVariants;
